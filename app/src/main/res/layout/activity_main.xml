@@ -70,7 +70,7 @@
         android:text="city"
         android:textColor="@android:color/black"
         android:textSize="15sp"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:visibility="visible" />
