@@ -47,10 +47,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun doStuff(view: View){
+        //var coordList: List<String>
+        //coordList =
         getLastLocation()
-        //var lat =
-        //var lon =
-        //getJsonData(lat, lon)
+        getJsonData()
     }
 
     private fun setValues(response: JSONObject) {
@@ -58,11 +58,11 @@ class MainActivity : AppCompatActivity() {
         binding.longitudeValue.text = response.getJSONArray("data").getJSONObject(0).getString("long")
     }
 
-    private fun getJsonData(lat: String?, lon: String?) {
+    private fun getJsonData() {
         // Instantiate the RequestQueue.
         val queue = Volley.newRequestQueue(this)
         val myKey = "00ad359085f24d918f2539a71417b869"
-        val url = "https://api.weatherbit.io/v2.0/current?key=$myKey&lat=$lat&lon=$lon"
+        val url = "https://api.weatherbit.io/v2.0/current?key=$myKey&lat=$latt&lon=$long"
 
         // Request a string response from the provided URL.
         val jsonRequest = JsonObjectRequest(
@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
 
 
     @SuppressLint("MissingPermission")
-    private fun getLastLocation() {
+    private fun getLastLocation(){
         if(checkPermission()){
             if(locationEnable()){
                 mfusedlocation.lastLocation.addOnCompleteListener{
@@ -88,10 +88,13 @@ class MainActivity : AppCompatActivity() {
                         newLocation()
                     }else{
                         latt = location.latitude.toString()
+                        var latitude = latt
                         long = location.longitude.toString()
+                        var longitude = long
+                        var coordList = listOf<String>(latitude, longitude)
                         Toast.makeText(this, "$latt", Toast.LENGTH_LONG).show()
                         Toast.makeText(this, "$long", Toast.LENGTH_LONG).show()
-                        val intent = Intent(this, MainActivity::class.java)
+                        // return coordList
                     }
                 }
             }else{
