@@ -2,6 +2,7 @@ package bd.ac.ru.cse3162
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
@@ -27,9 +28,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var mfusedlocation:FusedLocationProviderClient
     private var myRequestCode = 1010
 
-    lateinit var lat: String;
-    lateinit var lon: String;
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
 
@@ -41,12 +39,13 @@ class MainActivity : AppCompatActivity() {
         mfusedlocation = LocationServices.getFusedLocationProviderClient(this)
         binding.searchButton.setOnClickListener{doStuff(it)}
 
-
     }
 
     private fun doStuff(view: View){
         getLastLocation()
-        getJsonData()
+        val lat = intent.getStringExtra("lat")
+        val lon = intent.getStringExtra("lon")
+        getJsonData(lat, lon)
     }
 
     private fun setValues(response: JSONObject) {
@@ -64,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         val jsonRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
             Response.Listener { response ->
-                //setValues(response)
+                setValues(response)
             },
             Response.ErrorListener{ Toast.makeText(this, "Error fetching data", Toast.LENGTH_LONG).show()})
 
@@ -83,11 +82,13 @@ class MainActivity : AppCompatActivity() {
                     if(location == null){
                         newLocation()
                     }else{
-                        lat = location.latitude.toString()
-                        lon = location.longitude.toString()
+                        val lat = location.latitude.toString()
+                        val lon = location.longitude.toString()
                         Toast.makeText(this, "$lat", Toast.LENGTH_LONG).show()
                         Toast.makeText(this, "$lon", Toast.LENGTH_LONG).show()
-
+                        val intent = Intent(this, MainActivity::class.java)
+                        intent.putExtra("lat", location.latitude.toString())
+                        intent.putExtra("lon", location.longitude.toString())
                     }
                 }
             }else{
@@ -97,6 +98,7 @@ class MainActivity : AppCompatActivity() {
         } else{
             requestPermission()
         }
+
     }
 
     @SuppressLint("MissingPermission")
