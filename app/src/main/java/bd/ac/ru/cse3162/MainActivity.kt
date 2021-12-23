@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -24,6 +25,10 @@ import org.json.JSONObject
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    lateinit var latt: String
+    lateinit var long: String
+
 
     lateinit var mfusedlocation:FusedLocationProviderClient
     private var myRequestCode = 1010
@@ -43,9 +48,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun doStuff(view: View){
         getLastLocation()
-        val lat = intent.getStringExtra("lat")
-        val lon = intent.getStringExtra("lon")
-        getJsonData(lat, lon)
+        //var lat =
+        //var lon =
+        //getJsonData(lat, lon)
     }
 
     private fun setValues(response: JSONObject) {
@@ -82,13 +87,11 @@ class MainActivity : AppCompatActivity() {
                     if(location == null){
                         newLocation()
                     }else{
-                        val lat = location.latitude.toString()
-                        val lon = location.longitude.toString()
-                        Toast.makeText(this, "$lat", Toast.LENGTH_LONG).show()
-                        Toast.makeText(this, "$lon", Toast.LENGTH_LONG).show()
+                        latt = location.latitude.toString()
+                        long = location.longitude.toString()
+                        Toast.makeText(this, "$latt", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "$long", Toast.LENGTH_LONG).show()
                         val intent = Intent(this, MainActivity::class.java)
-                        intent.putExtra("lat", location.latitude.toString())
-                        intent.putExtra("lon", location.longitude.toString())
                     }
                 }
             }else{
