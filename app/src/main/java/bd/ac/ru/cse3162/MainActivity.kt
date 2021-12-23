@@ -88,10 +88,10 @@ class MainActivity : AppCompatActivity() {
                         newLocation()
                     }else{
                         latt = location.latitude.toString()
-                        var latitude = latt
+                        //var latitude = latt
                         long = location.longitude.toString()
-                        var longitude = long
-                        var coordList = listOf<String>(latitude, longitude)
+                        //var longitude = long
+                        //var coordList = listOf<String>(latitude, longitude)
                         Toast.makeText(this, "$latt", Toast.LENGTH_LONG).show()
                         Toast.makeText(this, "$long", Toast.LENGTH_LONG).show()
                         // return coordList
