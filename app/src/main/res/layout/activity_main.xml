@@ -93,6 +93,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/latitude"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/searchField"
         app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="@+id/searchField"
@@ -106,6 +107,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/longitude"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/latitudeValue"
         app:layout_constraintTop_toBottomOf="@+id/searchField" />
 
@@ -116,6 +118,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/location"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/latitudeLabel"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/latitudeLabel"
@@ -142,6 +145,7 @@
         android:layout_marginTop="8dp"
         android:text="23 December, 2021"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewWeatherButton" />
 
@@ -152,6 +156,7 @@
         android:layout_marginStart="16dp"
         android:text="2:00 PM"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/dateValue"
         app:layout_constraintTop_toTopOf="@+id/dateValue" />
 
@@ -162,6 +167,7 @@
         android:layout_marginBottom="8dp"
         android:text="@string/label_sunrise"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/iv_sunrise"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -173,6 +179,7 @@
         android:layout_marginBottom="8dp"
         android:text="@string/label_sunset"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/iv_sunset"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -207,6 +214,7 @@
         android:layout_marginTop="32dp"
         android:text="@string/label_humidity"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/temperatureCelcius" />
 
@@ -217,6 +225,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/label_pressure"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/humidityLabel"
         app:layout_constraintStart_toStartOf="@+id/humidityLabel"
         app:layout_constraintTop_toBottomOf="@+id/humidityLabel" />
@@ -230,7 +239,8 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/pressureLabel"
         app:layout_constraintStart_toStartOf="@+id/pressureLabel"
-        app:layout_constraintTop_toBottomOf="@+id/pressureLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/pressureLabel"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/humidityValue"
@@ -238,6 +248,7 @@
         android:layout_height="wrap_content"
         android:text="Humidity"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.37"
         app:layout_constraintStart_toEndOf="@+id/humidityLabel"
@@ -250,6 +261,7 @@
         android:layout_marginTop="8dp"
         android:text="Air Pressure"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/humidityValue"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/humidityValue"
@@ -262,6 +274,7 @@
         android:layout_marginTop="8dp"
         android:text="Visibility"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/pressureValue"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/pressureValue"
@@ -274,6 +287,7 @@
         android:layout_marginStart="32dp"
         android:text="Latitude"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/latitudeLabel"
         app:layout_constraintTop_toTopOf="@+id/latitudeLabel" />
 
@@ -284,6 +298,7 @@
         android:layout_marginStart="32dp"
         android:text="TextView"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/longitudeLabel"
         app:layout_constraintTop_toTopOf="@+id/longitudeLabel" />
 
@@ -294,6 +309,7 @@
         android:layout_marginTop="16dp"
         android:text="Weather Description"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/visibilityValue" />
