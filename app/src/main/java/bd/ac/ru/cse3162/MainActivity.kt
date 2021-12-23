@@ -13,7 +13,12 @@ import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import bd.ac.ru.cse3162.databinding.ActivityMainBinding
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
 import com.google.android.gms.location.*
+import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,7 +46,32 @@ class MainActivity : AppCompatActivity() {
 
     private fun doStuff(view: View){
         getLastLocation()
+        getJsonData()
     }
+
+    private fun setValues(response: JSONObject) {
+        binding.latitudeValue.text = response.getJSONArray("data").getJSONObject(0).getString("lat")
+        binding.longitudeValue.text = response.getJSONArray("data").getJSONObject(0).getString("long")
+    }
+
+    private fun getJsonData(lat: String?, lon: String?) {
+        // Instantiate the RequestQueue.
+        val queue = Volley.newRequestQueue(this)
+        val myKey = "00ad359085f24d918f2539a71417b869"
+        val url = "https://api.weatherbit.io/v2.0/current?key=$myKey&lat=$lat&lon=$lon"
+
+        // Request a string response from the provided URL.
+        val jsonRequest = JsonObjectRequest(
+            Request.Method.GET, url, null,
+            Response.Listener { response ->
+                //setValues(response)
+            },
+            Response.ErrorListener{ Toast.makeText(this, "Error fetching data", Toast.LENGTH_LONG).show()})
+
+        // Add the request to the RequestQueue.
+        queue.add(jsonRequest)
+    }
+
 
     @SuppressLint("MissingPermission")
     private fun getLastLocation() {
