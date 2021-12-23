@@ -92,12 +92,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/latitude"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/searchField"
         app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="@+id/searchField"
-        app:layout_constraintTop_toBottomOf="@+id/searchField"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/searchField" />
 
     <TextView
         android:id="@+id/longitudeText"
@@ -105,12 +103,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/longitude"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/searchButton"
         app:layout_constraintHorizontal_bias="0.849"
         app:layout_constraintStart_toStartOf="@+id/searchButton"
-        app:layout_constraintTop_toBottomOf="@+id/searchButton"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/searchButton" />
 
     <TextView
         android:id="@+id/locationText"
@@ -118,15 +114,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/location"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/latitudeText"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/latitudeText"
-        app:layout_constraintTop_toBottomOf="@+id/latitudeText"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/latitudeText" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/viewWeatherButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -137,5 +131,33 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/locationText" />
+
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date_time"
+        app:layout_constraintEnd_toEndOf="@+id/viewWeatherButton"
+        app:layout_constraintStart_toStartOf="@+id/viewWeatherButton"
+        app:layout_constraintTop_toBottomOf="@+id/viewWeatherButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/label_sunrise"
+        app:layout_constraintBottom_toTopOf="@+id/iv_sunrise"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/label_sunset"
+        app:layout_constraintBottom_toTopOf="@+id/iv_sunset"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
