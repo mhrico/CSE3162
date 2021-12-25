@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/STUDY/3rd Year 1st Semester/SDLAB III/CSE3162/app/src/main/res/drawable/gradient_bg.xml" value="0.2703125" />
+        <entry key="..\:/STUDY/3rd Year 1st Semester/SDLAB III/CSE3162/app/src/main/res/layout/activity_main.xml" value="0.2318840579710145" />
+        <entry key="..\:/STUDY/3rd Year 1st Semester/SDLAB III/CSE3162/app/src/main/res/layout/activity_spalsh_screen.xml" value="0.2269021739130435" />
+        <entry key="..\:/STUDY/3rd Year 1st Semester/SDLAB III/CSE3162/app/src/main/res/layout/activity_splash_screen.xml" value="0.2269021739130435" />
         <entry key="app/src/main/res/drawable/ic_sunrise.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
       </map>
